@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html >
+<!--From https://codepen.io/frytyler/pen/EGdtg-->
+<head>
+  <meta charset="UTF-8">
+  <title>ML API</title>
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="{{ url_for('static', filename='static\style.css') }}">
+  
+</head>
+
+<body>
+ <div class="login">
+	<h1>Predict Salary Analysis</h1>
+
+     <!-- Main Input For Receiving Query to our ML -->
+    <form action="{{ url_for('predict')}}"method="post">
+
+    	<input type="text" name="Person's Age" placeholder="Age" required="required" />
+        <input type="text" name="Person's Income" placeholder="in rupees" required="required" />
+		<input type="text" name="Home Owernership" placeholder="Home Owernership" required="required" />
+        <input type="text" name="Person's employment length" placeholder="---" required="required" />
+        <input type="text" name="Person's loan Intent" placeholder="loan_intent" required="required" />
+		<input type="text" name="Person's loan grade" placeholder="A:1,B:2,C:3,D:4,E:5" required="required" />
+        <input type="text" name="Person's loan amount" placeholder="Amount" required="required" />
+        <input type="text" name="Person's Loan Interest" placeholder="in percentage" required="required" />
+		<input type="text" name="Status" placeholder="status" required="required" />
+        <input type="text" name="Percent Income" placeholder="---" required="required" />
+        <input type="text" name="Credit History Length" placeholder="--" required="required" />
+	
+
+        <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+    </form>
+
+   <br>
+   <br>
+   {{ prediction_text }}
+
+ </div>
+
+
+</body>
+</html>
