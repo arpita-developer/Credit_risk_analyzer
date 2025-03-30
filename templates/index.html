@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html >
 <!--From https://codepen.io/frytyler/pen/EGdtg-->
@@ -15,10 +16,10 @@
 </head>
 
 <body>
-    <a href="login.html"><i class="fa-solid fa-circle-user logo">LOGIN</i></a>
+    <a href="{{ url_for('login') }}"><i class="fa-solid fa-circle-user logo"></i>login</a>
  <div class="login">
 	<h1>Credit Risk Analysis</h1>
-
+    <div class="form-container">
      <!-- Main Input For Receiving Query to our ML -->
     <form action="{{ url_for('predict')}}"method="post">
         <label for="lname">Person's Age:</label><br>
@@ -31,14 +32,14 @@
         <input type="text" name="Person's employment length" placeholder="---" required="required" /><br>
         <label for="lname">Person's loan Intent:</label><br>
         <input type="text" name="Person's loan Intent" placeholder="loan_intent" required="required" /><br>
-        <label for="lname">Person's loan grade:</label><br>
-		<input type="text" name="Person's loan grade" placeholder="A:1,B:2,C:3,D:4,E:5" required="required" /><br>
+        <!-- <label for="lname">Person's loan grade:</label><br>
+		 <input type="text" name="Person's loan grade" placeholder="A:1,B:2,C:3,D:4,E:5" required="required" /><br>  -->
         <label for="lname">Person's loan amount:</label><br>
         <input type="text" name="Person's loan amount" placeholder="Amount" required="required" /><br>
         <label for="lname">Person's Loan Interest:</label><br>
         <input type="text" name="Person's Loan Interest" placeholder="in percentage" required="required" /><br>
-        <label for="lname">Status:</label><br>
-		<input type="text" name="Status" placeholder="status" required="required" /><br>
+        <!-- <label for="lname">Status:</label><br>
+		<input type="text" name="Status" placeholder="status" required="required" /><br> -->
         <label for="lname">Loan Percent Income:</label><br>
         <input type="text" name="Percent Income" placeholder="---" required="required" /><br>
         <label for="lname">Credit History Length:</label><br>
@@ -46,6 +47,7 @@
 	
 
         <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+    </div>
     </form>
 
    <br>
